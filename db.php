@@ -1,4 +1,5 @@
 <?php
+// https://github.com/vrondakis/katphp
 
 class DB{
 	static $db = null;
