@@ -15,7 +15,7 @@ require_once('db.php');
 
 A typical set-up might look something like this
 
-```
+```php
 require_once('db.php');
 
 DB::Connect( 'mysql:host=localhost;dbname=db','user','password');
