@@ -25,6 +25,6 @@ $result = DB::QueryValue("SELECT id FROM Accounts WHERE username = :username OR 
 if($result){
     echo("Username or E-Mail is already in use");
 } else{
-    DB::Insert('accounts', ['username'=>$username, 'password'=>$hash, 'salt'=>$salt,'email'=>$email]);
+    DB::Insert('accounts', ['username'=>$username, 'password'=>$hash, 'salt'=>$salt, 'email'=>$email]);
     echo("New account created successfully");
 }
