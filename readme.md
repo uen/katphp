@@ -1,7 +1,7 @@
 KatPHP
 =====
 
-A lightweight PHP MySQL wrapper 
+A lightweight PHP PDO wrapper 
 
 
 Usage
