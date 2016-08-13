@@ -29,7 +29,7 @@ class DB{
 	}
 
 	static function Query($str, $a = null){
-		DB::IsAlive()
+		DB::IsAlive();
 		$stat = DB::$db->prepare($str);
 		if(!stat){
 			die(DB::$db->errorInfo());
