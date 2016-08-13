@@ -4,11 +4,11 @@
 class DB{
 	static $db = null;
 	
-	$options = [
-		PDO::ATTR_PERSISTENT => false
-	];
-	
 	static function Connect($str, $username, $password){
+		$options = [
+			PDO::ATTR_PERSISTENT => false
+		];
+		
 		try{
 			DB::$db = @new PDO($str, $username, $password, $options);
 			DB::$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION ); // For debugging
