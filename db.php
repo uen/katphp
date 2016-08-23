@@ -55,7 +55,8 @@ class DB{
 		}
 
 		$q = "INSERT INTO ".$t." (".implode( ',', $ka ).") VALUES(".implode(',', $va).")";
-		DB::Query($q, $a);
+		$st = DB::$db->prepare($q);
+		$st->execute($a);
 
 		return DB::$db->lastInsertId();
 	}
@@ -77,3 +78,4 @@ class DB{
 		}	
 	}
 }
+
