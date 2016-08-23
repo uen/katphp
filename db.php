@@ -1,6 +1,5 @@
 <?php
 // https://github.com/vrondakis/katphp
-
 class DB{
 	static $db = null;
 	
@@ -31,7 +30,7 @@ class DB{
 	static function Query($str, $a = null){
 		DB::IsAlive();
 		$stat = DB::$db->prepare($str);
-		if(!stat){
+		if(!$stat){
 			die(DB::$db->errorInfo());
 		}	
 
@@ -50,15 +49,15 @@ class DB{
 		$values = [];
 	
 		foreach($a as $k=>$v){
-			$st = ':'.$k;
-
-			$ka[]=$k;
-			$va[] = $st;
-			$values[$st] = $v;
+			$ka[] = $k;
+			$va[] = ':'.$k;
+			$values[':'.$k] = $v;
 		}
 
-		return DB::Query("INSERT INTO ".$t." (".implode( ',', $ka ).") VALUES(".implode(',', $va).")");
+		$q = "INSERT INTO ".$t." (".implode( ',', $ka ).") VALUES(".implode(',', $va).")";
+		DB::Query($q, $a);
 
+		return DB::$db->lastInsertId();
 	}
 	
 	static function QueryRow($str, $a=null){ 
