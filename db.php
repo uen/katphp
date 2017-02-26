@@ -77,5 +77,17 @@ class DB{
 			}
 		}	
 	}
+	static function QueryDelete($str, $a = null){
+		DB::IsAlive();
+		$stat = DB::$db->prepare($str);
+		if(!$stat){
+			die(DB::$db->errorInfo());
+		}	
+		if(!$stat->execute($a)){
+			die($stat->errorInfo());
+		}
+		
+		return true;
+	}
 }
 
