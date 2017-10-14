@@ -1,5 +1,5 @@
 <?php
-// https://github.com/vrondakis/katphp
+// https://github.com/vrondakis/katphp - https://github.com/Segeco/katphp
 class DB{
 	static $db = null;
 	
@@ -23,7 +23,8 @@ class DB{
 
 	static function IsAlive(){
 		if(!DB::$db){
-			die('Database connection died');
+			die('Database connection died; Contact Support.');
+			exit();
 		}
 	}
 
