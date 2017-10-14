@@ -24,6 +24,7 @@ class DB{
 	static function IsAlive(){
 		if(!DB::$db){
 			die('Database connection died; Contact Support.');
+			exit();
 		}
 	}
 
