@@ -1,5 +1,5 @@
 <?php
-// https://github.com/vrondakis/katphp - https://github.com/Segeco/katphp
+// https://github.com/vrondakis/katphp
 class DB{
 	static $db = null;
 	
